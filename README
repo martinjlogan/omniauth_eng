@@ -1,0 +1,18 @@
+Steps to get this engine working. 
+
+# add config/initializers/omniauth.rb
+unless Rails.env.production?
+ ENV['TWITTER_KEY'] = <value>
+ ENV['TWITTER_SECRET'] = <value>
+end
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+end
+
+# to your application controller you must add 
+helper OmniauthEng::Engine.helpers # Make an engines helpers available in this app
+
+# To your routes.rb file you must add
+mount OmniauthEng::Engine => "/auth", as: 'auth'
+

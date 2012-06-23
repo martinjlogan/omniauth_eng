@@ -7,11 +7,11 @@ require "omniauth_eng/version"
 Gem::Specification.new do |s|
   s.name        = "omniauth_eng"
   s.version     = OmniauthEng::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of OmniauthEng."
-  s.description = "TODO: Description of OmniauthEng."
+  s.authors     = ["Martin J. Logan"]
+  s.email       = ["martinjlogan@erlware.org"]
+  s.homepage    = "http://erlware.org"
+  s.summary     = "Simple omniauth engine"
+  s.description = "Description of OmniauthEng."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

@@ -4,7 +4,7 @@ class CreateOmniauthEngUsers < ActiveRecord::Migration
       t.string :uid
       t.string :name
       t.string :provider
-      t.boolean :admin
+      t.string :role
 
       t.timestamps
     end

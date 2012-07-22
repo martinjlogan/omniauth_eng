@@ -11,7 +11,7 @@ module OmniauthEng
 				user.provider = auth["provider"]
 				user.uid = auth["uid"]
 				user.name = auth["info"]["nickname"]
-				user.role="reader"
+				user.role = validate_role("reader")
 			end
 		end
 
@@ -27,11 +27,9 @@ module OmniauthEng
 			self.role == 'admin'
 		end
 
-		def role=(role='reader')
-				puts "Setting role for #{self.name} to #{role}"
+		def self.validate_role(role)
 			if role == 'reader' || role == 'writer' || role == 'admin'
-				logger.debug "Setting role for #{self.name} to #{role}"
-				self.role = role
+				role
 			else
 				raise 'invalid role specification'
 			end

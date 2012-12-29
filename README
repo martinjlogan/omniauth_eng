@@ -13,6 +13,13 @@ end
 # to your application controller you must add 
 helper OmniauthEng::Engine.helpers # Make an engines helpers available in this app
 
+Your application controller must inherit from the class below
+< ::OmniauthEng::ApplicationController
+
 # To your routes.rb file you must add
 mount OmniauthEng::Engine => "/auth", as: 'auth'
 
+# add gems to your file
+gem 'omniauth-facebook'
+
+# migrate over the omniautheng tables
